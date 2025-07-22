@@ -1,0 +1,93 @@
+.projetos {
+  padding-bottom: 70px;
+}
+
+.projetos .container-projetos {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+  justify-content: center;
+}
+
+.projetos .projeto {
+  max-width: 400px;
+  max-height: 260px;
+  position: relative;
+  display: none;
+  transition: transform 0.3s;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.projetos .projeto.ativo {
+  display: block;
+}
+
+.projetos .projeto a {
+    color: var(--cor-texto-branco);
+}
+
+.projetos .projeto:hover {
+  transform: scale(1.02);
+  cursor: pointer;
+}
+
+.projetos .projeto h3 {
+  background-color: var(--cor-fundo-projeto-titulo);
+  width: 100%;
+  padding: 10px 20px;
+  position: absolute;
+  bottom: 0;
+  z-index: 2;
+  transition: opacity 0.3s ease-in-out;
+}
+
+
+
+.projetos .projeto .informacoes-projeto {
+  background-color: var(--cor-fundo-projeto-titulo);
+  color: var(--cor-texto-branco);
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  font-weight: 600;
+  opacity: 0;
+  transition: 0.3s;
+  padding: 20px;
+}
+
+.projetos .projeto:hover .informacoes-projeto {
+  opacity: 1;
+  background-color: var(--cor-fundo-projeto-hover);
+}
+
+.projetos .projeto:hover h3 {
+    opacity: 0;
+}
+
+.projetos .btn-mostrar-projetos {
+	background: none;
+	border: 1px solid #fff;
+	border-radius: 15px;
+	color: #fff;
+	width: 180px;
+	padding: 20px;
+	font-size: 18px;
+	font-weight: 600;
+	margin: 0 auto;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	cursor: pointer;
+}
+
+.projetos .btn-mostrar-projetos:hover {
+	background-color: #9443d8;
+	transition: 0.3s;
+}
+
+.projetos .btn-mostrar-projetos.remover {
+	display: none;
+}

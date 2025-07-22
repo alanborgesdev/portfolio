@@ -1,153 +1,240 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Alan Borges - Desenvolvedor Frontend</title>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Alan Borges - Desenvolvedor Frontend</title>
 
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
-    />
+        <!-- Font Awesome -->
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+        />
 
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.14.0/devicon.min.css"
-    />
+        <!-- Devicon -->
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.14.0/devicon.min.css"
+        />
 
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
-      rel="stylesheet"
-    />
+        <!-- Google Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
+            rel="stylesheet"
+        />
 
-    <link rel="stylesheet" href="./src/css/reset.css" />
-    <link rel="stylesheet" href="./src/css/estilos.css" />
-    <link rel="stylesheet" href="./src/css/responsivo.css" />
-  </head>
-  <body>
-    <section class="home">
-      <div class="informacoes">
-        <h1>Alan Borges</h1>
-        <p>
-          Sou um desenvolvedor front-end, sempre em busca de soluções criativas
-          e inovadoras.💻✨
-        </p>
-        <p>
-          Quando não estou programando, estou tocando violino, onde encontro
-          inspiração e disciplina que aplico no meu trabalho.🎻
-        </p>
-        <p>
-          Filmes e jogos também fazem parte do meu repertório criativo,
-          ajudando a expandir minha visão e ideias.🎮🎬
-        </p>
+        <link rel="stylesheet" href="./src/css/reset.css" />
 
-        <ul class="redes-sociais">
-          <li>
-            <a
-              href="https://www.linkedin.com/in/alanborgesdev/"
-              title="Ir para o LinkedIn"
-              target="_blank"
-            >
-              <i class="fab fa-linkedin-in"></i>
-            </a>
-          </li>
+        <link rel="stylesheet" href="src/css/globais.css" />
+        <link rel="stylesheet" href="src/css/variaveis.css" />
+        <link rel="stylesheet" href="src/css/secoes/header.css" />
+        <link rel="stylesheet" href="src/css/secoes/home.css" />
+        <link rel="stylesheet" href="src/css/secoes/sobre.css" />
+        <link rel="stylesheet" href="src/css/secoes/habilidades.css" />
+        <link rel="stylesheet" href="src/css/secoes/projetos.css" />
+        <link rel="stylesheet" href="src/css/secoes/footer.css" />
+        <link rel="stylesheet" href="./src/css/responsivo.css" />
+    </head>
+    <body>
+        <header class="cabecalho">
+            <nav class="menu">
+                <ul>
+                    <li><a href="#sobre">Sobre</a></li>
+                    <li><a href="#habilidades">Habilidades</a></li>
+                    <li><a href="#projetos">Projetos</a></li>
+                </ul>
+            </nav>
+        </header>
 
-          <li>
-            <a
-              href="https://github.com/alanborgesdev"
-              title="Ir para o GitHub"
-              target="_blank"
-            >
-              <i class="fab fa-github"></i>
-            </a>
-          </li>
+        <section class="home" id="home">
+            <div class="informacoes">
+                <h1>Alan Borges</h1>
+                <p>
+                    Desenvolvedor Frontend<br />Construindo interfaces interativas<br />com React e
+                    TypeScript.
+                </p>
 
-          <li>
-            <a
-              href="https://www.instagram.com/alanborges.dev/"
-              title="Ir para o Instagram"
-              target="_blank"
-            >
-              <i class="fab fa-instagram"></i>
-            </a>
-          </li>
-        </ul>
-      </div>
+                <ul class="redes-sociais">
+                    <li>
+                        <a
+                            href="https://www.linkedin.com/in/alanborgesdev/"
+                            title="Ir para o LinkedIn"
+                            target="_blank"
+                        >
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                    </li>
 
-      <div class="container-foto">
-        <div class="foto sombra-interna">
-          <img
-            src="./src/imagens/foto-perfil.png"
-            alt="foto do portfólio do Alan"
-          />
-        </div>
-      </div>
-    </section>
+                    <li>
+                        <a
+                            href="https://github.com/alanborgesdev"
+                            title="Ir para o GitHub"
+                            target="_blank"
+                        >
+                            <i class="fab fa-github"></i>
+                        </a>
+                    </li>
 
-    <section class="projetos" id="projetos">
-      <h2 class="titulo">Meus projetos</h2>
-
-      <div class="container-projetos">
-        <div class="projeto ativo">
-          <a
-            href="https://github.com/alanborgesdev/gta-landing-page"
-            target="_blank"
-          >
-            <img
-              src="./src/imagens/projeto-gta.png"
-              alt="Pokedex"
-            />
-            <h3>Projeto GTA | Landing Page</h3>
-
-            <div class="informacoes-projeto">
-              <p>
-                Landing page inspirada no universo GTA, desenvolvida com HTML,
-                CSS e JavaScript, com design responsivo e fontes personalizadas.
-              </p>
-              <p>🔗 Ver no GitHub Pages</p>
+                    <li>
+                        <a
+                            href="https://www.instagram.com/alanborges.dev/"
+                            title="Ir para o Instagram"
+                            target="_blank"
+                        >
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </li>
+                </ul>
             </div>
-          </a>
-        </div>
 
-        <div class="projeto ativo">
-          <a href="https://github.com/alanborgesdev/pokedex" target="_blank">
-            <img
-              src="./src/imagens/projeto-pokedex.png"
-              alt="Projeto listagem de pokemons"
-            />
-            <h3>Pokedex React</h3>
-            <div class="informacoes-projeto">
-              <p>
-                Pokedex feita com HTML, CSS e JavaScript que consome a PokéAPI
-                para listar e exibir Pokémon.
-              </p>
-              <p>🔗 Ver no GitHub Pages</p>
+            <div class="container-foto">
+                <div class="foto sombra-interna">
+                    <img src="./src/imagens/foto-perfil.png" alt="foto do portfólio do Alan" />
+                </div>
             </div>
-          </a>
-        </div>
+        </section>
 
-        <div class="projeto ativo">
-          <a
-            href="https://formulario-newsletter-phi.vercel.app/"
-            target="_blank"
-          >
-            <img
-              src="./src/imagens/formulario-newsletter.png"
-              alt="Formulário de Newsletter"
-            />
-            <h3>Formulário de Newsletter</h3>
-            <div class="informacoes-projeto">
-              <p>
-                Formulário de Newsletter com validação de campos, desenvolvido
-                com React, TypeScript e Tailwind CSS.
-              </p>
-              <p>🔗 Ver no GitHub Pages</p>
+        <section class="sobre" id="sobre">
+            <h2 class="titulo-secao">Sobre Mim</h2>
+            <div class="descricao">
+                <p>
+                    Sou um desenvolvedor front-end apaixonado por transformar desafios criativos em
+                    soluções de código limpo e eficiente. A disciplina e o foco que desenvolvi ao
+                    longo de anos tocando violino são os mesmos que aplico para escrever um código
+                    bem estruturado e performático.
+                </p>
+                <p>
+                    Minha criatividade, alimentada por filmes e jogos, me impulsiona a pensar na
+                    experiência do usuário e a construir interfaces que não sejam apenas funcionais,
+                    mas também agradáveis de usar. Atualmente, meu foco técnico está no ecossistema
+                    React com TypeScript para criar componentes reutilizáveis e aplicações
+                    escaláveis.
+                </p>
+                <p>
+                    Estou em busca de uma oportunidade como Desenvolvedor Júnior para colaborar com
+                    uma equipe, continuar aprendendo e aplicar minhas habilidades para construir
+                    produtos digitais incríveis.
+                </p>
             </div>
-          </a>
-        </div>
-      </div>
-    </section>
-  </body>
+        </section>
+
+        <section class="habilidades" id="habilidades">
+            <h2 class="titulo-secao">Minhas Habilidades</h2>
+
+            <!-- Subseção para Tecnologias -->
+            <h3 class="subtitulo-habilidades">Linguagens & Frameworks</h3>
+            <div class="container-habilidades">
+                <div class="habilidade" title="HTML5">
+                    <i class="devicon-html5-plain colored"></i>
+                </div>
+                <div class="habilidade" title="CSS3">
+                    <i class="devicon-css3-plain colored"></i>
+                </div>
+                <div class="habilidade" title="JavaScript">
+                    <i class="devicon-javascript-plain colored"></i>
+                </div>
+                <div class="habilidade" title="TypeScript">
+                    <i class="devicon-typescript-plain colored"></i>
+                </div>
+                <div class="habilidade" title="React">
+                    <i class="devicon-react-original colored"></i>
+                </div>
+                <div class="habilidade" title="Tailwind CSS">
+                    <i class="devicon-tailwindcss-plain colored"></i>
+                </div>
+            </div>
+
+            <!-- Subseção para Ferramentas -->
+            <h3 class="subtitulo-habilidades">Ferramentas & Plataformas</h3>
+            <div class="container-habilidades">
+                <div class="habilidade" title="Git">
+                    <i class="devicon-git-plain colored"></i>
+                </div>
+                <div class="habilidade" title="GitHub">
+                    <i class="devicon-github-original colored"></i>
+                </div>
+                <div class="habilidade" title="Visual Studio Code">
+                    <i class="devicon-vscode-plain colored"></i>
+                </div>
+                <div class="habilidade" title="Figma">
+                    <i class="devicon-figma-plain colored"></i>
+                </div>
+            </div>
+        </section>
+
+        <section class="projetos" id="projetos">
+            <h2 class="titulo-secao">Meus projetos</h2>
+
+            <div class="container-projetos">
+                <div class="projeto ativo">
+                    <a href="https://github.com/alanborgesdev/gta-landing-page" target="_blank">
+                        <img src="./src/imagens/projeto-gta.png" alt="Pokedex" />
+                        <h3>Projeto GTA | Landing Page</h3>
+
+                        <div class="informacoes-projeto">
+                            <p>
+                                Landing page inspirada no universo GTA, desenvolvida com HTML, CSS e
+                                JavaScript, com design responsivo e fontes personalizadas.
+                            </p>
+                            <p>🔗 Ver no GitHub Pages</p>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="projeto ativo">
+                    <a href="https://github.com/alanborgesdev/pokedex" target="_blank">
+                        <img
+                            src="./src/imagens/projeto-pokedex.png"
+                            alt="Projeto listagem de pokemons"
+                        />
+                        <h3>Pokedex React</h3>
+                        <div class="informacoes-projeto">
+                            <p>
+                                Pokedex feita com HTML, CSS e JavaScript que consome a PokéAPI para
+                                listar e exibir Pokémon.
+                            </p>
+                            <p>🔗 Ver no GitHub Pages</p>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="projeto ativo">
+                    <a href="https://formulario-newsletter-phi.vercel.app/" target="_blank">
+                        <img
+                            src="./src/imagens/formulario-newsletter.png"
+                            alt="Formulário de Newsletter"
+                        />
+                        <h3>Formulário de Newsletter</h3>
+                        <div class="informacoes-projeto">
+                            <p>
+                                Formulário de Newsletter com validação de campos, desenvolvido com
+                                React, TypeScript e Tailwind CSS.
+                            </p>
+                            <p>🔗 Ver no GitHub Pages</p>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="projeto ativo">
+                    <a href="https://petdev-landing-nextjs.vercel.app/" target="_blank">
+                        <img src="./src/imagens/pet-shop-dev.png" alt="Formulário de Newsletter" />
+                        <h3>Pet Shop Dev | Landing Page</h3>
+                        <div class="informacoes-projeto">
+                            <p>
+                                Landing page moderna e responsiva para um petshop fictício,
+                                construída com foco em performance e boas práticas de SEO.
+                            </p>
+                            <p>🔗 Ver no GitHub Pages</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <footer class="footer">
+            <p>© 2024 Alan Borges. Todos os direitos reservados.</p>
+        </footer>
+    </body>
 </html>

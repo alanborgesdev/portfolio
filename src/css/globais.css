@@ -1,0 +1,42 @@
+/* Estilos e animações globais */
+html {
+  color: var(--cor-texto-principal);
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--fonte-primaria);
+  margin: 0 auto;
+  max-width: 1120px;
+  background: var(--cor-fundo);
+  background-size: 120% 120%;
+}
+
+.titulo-secao {
+  text-align: center;
+  padding: 60px 0;
+  font-size: 45px;
+  font-weight: 500;
+  text-transform: uppercase;
+  color: var(--cor-texto-branco);
+}
+
+.subtitulo-habilidades {
+    text-align: center;
+    margin: 10px 0;
+    font-size: 30px;
+    font-weigth: 300;
+    color: var(--cor-texto-branco);
+}
+
+@keyframes gradient-animation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}

@@ -1,0 +1,16 @@
+:root {
+  /* Cores */
+  --cor-fundo: linear-gradient(150deg, #0d0d0d, #0f052d);
+  --cor-fundo-foto: linear-gradient(to right, #0077ff, #00ffe7, #7f00ff);
+  --cor-texto-principal: #e0e0e0;
+  --cor-texto-secundario: #a6e1fa;
+  --cor-texto-branco: #ffffff;
+  --cor-destaque: #64ffda;
+  --cor-fundo-projeto-hover: #000;
+  --cor-fundo-projeto-titulo: #040203;
+  --cor-fundo-hover-menu: #0f052d;
+
+  /* Fontes */
+  --fonte-primaria: "Poppins", sans-serif;
+  --fonte-secundaria: "Raleway", sans-serif;
+}

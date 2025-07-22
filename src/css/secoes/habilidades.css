@@ -1,0 +1,33 @@
+.habilidades {
+    padding-bottom: 70px;
+}
+
+.container-habilidades {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 25px;
+}
+
+.habilidade {
+    background-color: rgba(255, 255, 255, 0.12);
+    border: 1px solid var(--cor-texto-principal);
+    border-radius: 10px;
+    padding: 30px 40px;
+    transition: 0.3s;
+    width: 150px;
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.habilidade:hover {
+    border-color: var(--cor-destaque);
+    transform: scale(1.05);
+}
+
+.habilidade i {
+    font-size: 80px;
+    color: var(--cor-texto-branco);
+}
