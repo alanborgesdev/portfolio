@@ -37,9 +37,12 @@ botaoMenu.addEventListener('click', () => {
 // 3. (Bônus) Fechar o menu ao clicar em um link
 linksDoMenu.forEach(link => {
     link.addEventListener('click', () => {
-        // Remove a classe 'aberto' para fechar o menu
-        menu.classList.remove('aberto');
-        // Restaura o ícone para 'menu'
-        botaoMenu.textContent = 'menu';
+        // CORREÇÃO: Adicione o setTimeout aqui
+        setTimeout(() => {
+            // Remove a classe 'aberto' para fechar o menu
+            menu.classList.remove('aberto');
+            // Restaura o ícone para 'menu'
+            botaoMenu.textContent = 'menu';
+        }, 300); // Atraso de 300ms
     });
 });

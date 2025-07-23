@@ -1,19 +1,25 @@
 .home {
-  display: flex;
-  min-height: calc(100vh - 125px);
-  align-items: center;
+    /* min-height: calc(100vh - 125px); */ /* Podemos remover ou ajustar isso */
+    width: 100%;
+  align-items: center; /* Alinha os itens verticalmente no centro da sua linha do grid */
   gap: 50px;
-  justify-content: space-between;
-  margin-top: 50px;
+  
+  /* NOVO: Substituindo Flexbox por Grid */
+  grid-template-columns: 1fr 1fr; /* Duas colunas de tamanho igual */
+  grid-template-areas: "info foto"; /* Definindo as áreas: 'info' na esquerda, 'foto' na direita */
 }
 
 .home .informacoes {
+   /* REMOVIDO: display: flex, flex-direction, max-width: 50% */
   display: flex;
   flex-direction: column;
-  gap: 15px;
+
+   gap: 15px;
   letter-spacing: 2px;
   padding: 0 15px;
-  max-width: 50%;
+
+  /* NOVO: Atribuindo à área 'info' */
+  grid-area: info;
 }
 
 .home .informacoes h1 {
@@ -27,6 +33,19 @@
   font-size: 24px;
   color: var(--cor-texto-secundario);
   margin-bottom: 20px;
+}
+
+.home .container-foto {
+  /* NOVO: Atribuindo à área 'foto' e centralizando o conteúdo */
+  grid-area: foto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.home .container-foto .foto {
+  max-width: 450px;
+  border-radius: 50%;
 }
 
 .home .redes-sociais {

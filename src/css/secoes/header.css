@@ -8,6 +8,7 @@
     left: 0; /* Cola na esquerda */
     width: 100%; /* Ocupa 100% da largura */
     z-index: 1000;
+    /* background-color: rgba(255, 255, 255, 0.12); */
 }
 
 .cabecalho .menu ul {
@@ -16,7 +17,7 @@
 
 .cabecalho .menu li a {
     padding: 10px 20px;
-    font-size: 2rem;
+    font-size: 20px;
     font-weight: 600;
     color: var(--cor-texto-branco);
     border-radius: 5px;
