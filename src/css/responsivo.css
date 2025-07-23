@@ -25,6 +25,46 @@
     .projetos .container-projetos {
         padding: 0 30px;
     }
+
+    .projetos .projeto {
+        max-height: none;
+    }
+
+    .projetos .projeto:hover {
+        transform: none;
+    }
+
+    .projetos .projeto h3 {
+        position: static;
+        opacity: 1; /* Garante que o título esteja sempre visível */
+        background-color: transparent;
+        padding: 15px 15px 10px;
+        text-align: center;
+    }
+
+    .projetos .projeto .informacoes-projeto {
+        position: static; /* Deixa de ser um overlay */
+        opacity: 1; /* Fica sempre visível */
+        height: auto; /* Altura se ajusta ao conteúdo */
+        background-color: var(--cor-fundo-projeto-hover); /* Fundo sólido para legibilidade */
+        padding: 0 15px 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .projetos .links-projeto {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        gap: 10px;
+    }
+
+    .projetos .btn-projeto {
+        width: 90%;
+        text-align: center;
+    }
 }
 
 @media (max-width: 425px) {
