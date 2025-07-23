@@ -3,6 +3,11 @@
     justify-content: space-between;
     align-items: center;
     padding: 30px 15px;
+    position: fixed; /* Fixa o header na tela */
+    top: 0; /* Cola no topo */
+    left: 0; /* Cola na esquerda */
+    width: 100%; /* Ocupa 100% da largura */
+    z-index: 1000;
 }
 
 .cabecalho .menu ul {
@@ -11,7 +16,7 @@
 
 .cabecalho .menu li a {
     padding: 10px 20px;
-    font-size: 20px;
+    font-size: 2rem;
     font-weight: 600;
     color: var(--cor-texto-branco);
     border-radius: 5px;
@@ -21,4 +26,8 @@
 .cabecalho .menu li a:hover {
     background-color: var(--cor-destaque);
     color: var(--cor-fundo-hover-menu);
+}
+
+i#burguer {
+    display: none;
 }

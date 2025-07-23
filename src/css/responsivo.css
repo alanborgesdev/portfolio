@@ -1,8 +1,56 @@
 @media (max-width: 1080px) {
+    body {
+        padding-top: 92px;
+    }
+    
     .cabecalho {
         padding: 30px;
         align-items: center;
-        justify-content: center;
+        /* justify-content: flex-end; */
+    }
+
+    /* .cabecalho .menu ul {
+        display: none;
+        flex-direction: column;
+        background-color: black;
+        gap: 25px;
+    } */
+
+        .cabecalho .menu {
+        display: none;
+        position: absolute; /* Para sobrepor o conteúdo da página */
+        top: 92px; /* Começa logo abaixo do header */
+        left: 0;
+        width: 100%;
+        height: calc(100vh - 92px); /* Ocupa o resto da altura da tela */
+        background-color: rgba(0, 0, 0, 0.95); /* Fundo escuro semi-transparente */
+    }
+
+     .cabecalho .menu.aberto {
+        display: flex; /* Faz o menu aparecer */
+        justify-content: center; /* Centraliza o <ul> verticalmente no overlay */
+        align-items: center;    /* Centraliza o <ul> horizontalmente no overlay */
+    }
+    
+    /* Estiliza a lista de links quando o menu está aberto */
+    .cabecalho .menu.aberto ul {
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+        text-align: center;
+    }
+    
+    .cabecalho .menu.aberto ul a {
+        font-size: 2rem; /* Aumenta a fonte para facilitar o toque */
+    }
+
+
+    i#burguer {
+        display: block;
+        cursor: pointer; /* Adiciona o cursor de mãozinha */
+        color: var(--cor-texto-branco); /* Garante que o ícone seja visível */
+        font-size: 2.5rem; /* Aumenta o tamanho do ícone */
+        z-index: 1001; /* Garante que o ícone fique acima de tudo */
     }
 
     .home {
