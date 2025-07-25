@@ -1,0 +1,41 @@
+.contato {
+    text-align: center;
+    padding-bottom: 80px;
+}
+
+.contato .contato-descricao {
+    max-width: 600px;
+    margin: 0 auto 40px;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: var(--cor-texto-secundario);
+}
+
+.contato .contato-links {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    padding-bottom: 30px;
+}
+
+.contato .btn-contato {
+    padding: 15px 30px;
+    border-radius: 8px;
+    border: 1px solid var(--cor-texto-branco);
+    font-weight: 600;
+    transition: background-color 0.3s, border-color 0.3s, color 0.3s;
+    cursor: pointer;
+    background-color: transparent;
+    color: var(--cor-texto-branco);
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.contato .btn-contato:hover {
+    background-color: var(--cor-destaque);
+    border-color: var(--cor-destaque);
+    color: var(--cor-fundo-hover-menu);
+}
