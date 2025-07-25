@@ -1,89 +1,81 @@
 .home {
-    /* min-height: calc(100vh - 125px); */ /* Podemos remover ou ajustar isso */
     width: 100%;
-  align-items: center; /* Alinha os itens verticalmente no centro da sua linha do grid */
-  gap: 50px;
-  
-  /* NOVO: Substituindo Flexbox por Grid */
-  grid-template-columns: 1fr 1fr; /* Duas colunas de tamanho igual */
-  grid-template-areas: "info foto"; /* Definindo as áreas: 'info' na esquerda, 'foto' na direita */
+    align-items: center;
+    gap: 50px;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: 'info foto';
 }
 
 .home .informacoes {
-   /* REMOVIDO: display: flex, flex-direction, max-width: 50% */
-  display: flex;
-  flex-direction: column;
-
-   gap: 15px;
-  letter-spacing: 2px;
-  padding: 0 15px;
-
-  /* NOVO: Atribuindo à área 'info' */
-  grid-area: info;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    letter-spacing: 2px;
+    padding: 0 15px;
+    grid-area: info;
 }
 
 .home .informacoes h1 {
-  font-family: var(--fonte-secundaria);
-  font-size: 45px;
-  margin-bottom: 20px;
+    font-family: var(--fonte-secundaria);
+    font-size: 45px;
+    margin-bottom: 20px;
 }
 
 .home .informacoes p {
-  font-family: var(--fonte-secundaria);
-  font-size: 24px;
-  color: var(--cor-texto-secundario);
-  margin-bottom: 20px;
+    font-family: var(--fonte-secundaria);
+    font-size: 24px;
+    color: var(--cor-texto-secundario);
+    margin-bottom: 20px;
 }
 
 .home .container-foto {
-  /* NOVO: Atribuindo à área 'foto' e centralizando o conteúdo */
-  grid-area: foto;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+    grid-area: foto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .home .container-foto .foto {
-  max-width: 450px;
-  border-radius: 50%;
+    max-width: 450px;
+    border-radius: 50%;
 }
 
 .home .redes-sociais {
-  display: flex;
-  gap: 20px;
+    display: flex;
+    gap: 20px;
 }
 
 .home .redes-sociais a i {
-  border: 1px solid var(--cor-texto-principal);
-  border-radius: 50%;
-  width: 50px;
-  height: 50px;
-  padding: 10px;
-  font-size: 26px;
-  transition: 0.3s;
-  display: grid;
-  place-items: center;
-  color: var(--cor-texto-principal);
+    border: 1px solid var(--cor-texto-principal);
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    padding: 10px;
+    font-size: 26px;
+    transition: 0.3s;
+    display: grid;
+    place-items: center;
+    color: var(--cor-texto-principal);
 }
 
 .home .redes-sociais a i:hover {
-  color: var(--cor-destaque);
-  border-color: var(--cor-destaque);
-  transform: scale(1.1);
+    color: var(--cor-destaque);
+    border-color: var(--cor-destaque);
+    transform: scale(1.1);
 }
 
 .home .container-foto .foto {
-  max-width: 450px;
-  border-radius: 50%;
+    max-width: 450px;
+    border-radius: 50%;
 }
 
 .home .container-foto img {
-  width: 100%;
-  border-radius: 50%;
+    width: 100%;
+    border-radius: 50%;
 }
 
 .home .foto.sombra-interna {
-  background: var(--cor-fundo-foto);
-  background-size: 180% 180%;
-  animation: gradient-animation 5s ease infinite;
+    background: var(--cor-fundo-foto);
+    background-size: 180% 180%;
+    animation: gradient-animation 5s ease infinite;
 }

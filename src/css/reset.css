@@ -1,21 +1,9 @@
-*{
-    margin: 0;
-    padding: 0;
-    border: none;
-    outline: none;
-    box-sizing: border-box;        
-}
-
-a{
-    text-decoration: none;
-    color: #fff;
-}
 * {
     margin: 0;
     padding: 0;
     border: none;
     outline: none;
-    box-sizing: border-box;        
+    box-sizing: border-box;
 }
 
 a {
@@ -30,11 +18,4 @@ ul {
 img {
     max-width: 100%;
     display: block;
-}
-ul{
-    list-style: none;
-}
-
-img{
-    max-width: 100%;    
 }

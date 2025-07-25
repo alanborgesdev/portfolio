@@ -1,4 +1,3 @@
-/* Estilos e animações globais */
 html {
     color: var(--cor-texto-principal);
     scroll-behavior: smooth;
@@ -12,17 +11,14 @@ body {
     background-size: 120% 120%;
 
     display: grid;
-    grid-template-columns: 1fr; /* Apenas uma coluna */
+    grid-template-columns: 1fr;
     grid-template-areas:
-        'main' /* A área do conteúdo principal */
-        'footer'; /* A área do rodapé */
+        'main'
+        'footer';
 
-    /* O header é 'position: fixed', então ele fica FORA do fluxo do grid.
-     Ainda precisamos do padding-top para empurrar o grid para baixo. */
     padding-top: 60px;
 }
 
-/* NOVO: Atribuindo cada elemento à sua área do grid */
 main {
     grid-area: main;
 }
@@ -49,11 +45,11 @@ main {
 }
 
 .tela {
-  min-height: calc(100vh - 60px); /* Altura da tela MENOS a altura do header */
-  display: grid;
-  align-content: center; /* Centraliza o conteúdo verticalmente */
-  padding: 60px 15px; /* Adiciona um espaçamento interno */
-  scroll-margin-top: 60px;
+    min-height: calc(100vh - 60px);
+    display: grid;
+    align-content: center;
+    padding: 60px 15px;
+    scroll-margin-top: 60px;
 }
 
 @keyframes gradient-animation {

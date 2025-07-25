@@ -2,72 +2,65 @@
     body {
         padding-top: 92px;
     }
-    
+
     .cabecalho {
         padding: 30px;
         align-items: center;
-        justify-content: flex-end;
+        justify-content: space-between;
     }
 
-    /* .cabecalho .menu ul {
-        display: none;
-        flex-direction: column;
-        background-color: black;
-        gap: 25px;
-    } */
+    .cabecalho .logo {
+        margin-left: 0;
+    }
 
-        .cabecalho .menu {
+    .cabecalho .menu {
         display: none;
-        position: absolute; /* Para sobrepor o conteúdo da página */
-        top: 92px; /* Começa logo abaixo do header */
+        position: absolute;
+        top: 92px;
         left: 0;
         width: 100%;
-        height: calc(100vh - 92px); /* Ocupa o resto da altura da tela */
-        background-color: rgba(0, 0, 0, 0.95); /* Fundo escuro semi-transparente */
+        height: calc(100vh - 92px);
+        background-color: rgba(0, 0, 0, 0.95);
     }
 
-     .cabecalho .menu.aberto {
-        display: flex; /* Faz o menu aparecer */
-        justify-content: center; /* Centraliza o <ul> verticalmente no overlay */
-        align-items: center;    /* Centraliza o <ul> horizontalmente no overlay */
+    .cabecalho .menu.aberto {
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
-    
-    /* Estiliza a lista de links quando o menu está aberto */
+
     .cabecalho .menu.aberto ul {
         display: flex;
         flex-direction: column;
         gap: 40px;
         text-align: center;
     }
-    
-    .cabecalho .menu.aberto ul a {
-        font-size: 2rem; /* Aumenta a fonte para facilitar o toque */
-    }
 
+    .cabecalho .menu.aberto ul a {
+        font-size: 2rem;
+    }
 
     i#burguer {
         display: block;
-        cursor: pointer; /* Adiciona o cursor de mãozinha */
-        color: var(--cor-texto-branco); /* Garante que o ícone seja visível */
-        font-size: 2.5rem; /* Aumenta o tamanho do ícone */
-        z-index: 1001; /* Garante que o ícone fique acima de tudo */
+        cursor: pointer;
+        color: var(--cor-texto-branco);
+        font-size: 2.5rem;
+        z-index: 1001;
     }
 
     .home {
-        /* flex-direction: column; */
-        grid-template-columns: 1fr; /* Apenas uma coluna */
-        grid-template-areas: 
-            "foto"   /* Área da foto agora fica em cima */
-            "info";   /* Área de info agora fica embaixo */
-        
-        text-align: center; /* Centraliza o texto dentro da seção */
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            'foto'
+            'info';
+
+        text-align: center;
         align-items: center;
-        margin: 50px 0;
         gap: 30px;
+        padding: 50px 15px;
     }
 
     .home .informacoes {
-        /* max-width: 100%; */
         text-align: center;
         align-items: center;
     }
@@ -86,7 +79,7 @@
 
     .projetos .projeto h3 {
         position: static;
-        opacity: 1; /* Garante que o título esteja sempre visível */
+        opacity: 1;
         background-color: transparent;
         padding: 15px 15px 10px;
         text-align: center;
@@ -97,10 +90,10 @@
     }
 
     .projetos .projeto .informacoes-projeto {
-        position: static; /* Deixa de ser um overlay */
-        opacity: 1; /* Fica sempre visível */
-        height: auto; /* Altura se ajusta ao conteúdo */
-        background-color: var(--cor-fundo-projeto-hover); /* Fundo sólido para legibilidade */
+        position: static;
+        opacity: 1;
+        height: auto;
+        background-color: var(--cor-fundo-projeto-hover);
         padding: 0 15px 20px;
         display: flex;
         flex-direction: column;
@@ -121,9 +114,10 @@
     }
 
     .tela {
-        min-height: auto; /* Reseta a altura mínima */
-        padding-top: 60px; /* Garante um espaçamento no topo */
-        padding-bottom: 60px; /* E no final */
+        min-height: auto;
+        padding-top: 60px;
+        padding-bottom: 60px;
+        scroll-margin-top: 92px;
     }
 }
 
