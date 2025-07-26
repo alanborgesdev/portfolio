@@ -2,12 +2,13 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 5%;
+    padding: 15px 5%;
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     z-index: 1000;
+    background: var(--cor-fundo-foto);
 }
 
 .cabecalho .logo {
@@ -28,8 +29,8 @@
 }
 
 .cabecalho a:hover .logo {
-    color: var(--cor-destaque);
-    border: 2px solid var(--cor-destaque);
+    color: var(--cor-fundo-hover-menu);
+    border: 2px solid var(--cor-fundo-hover-menu);
 }
 
 .cabecalho .menu ul {

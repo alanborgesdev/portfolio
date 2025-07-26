@@ -36,10 +36,20 @@
 }
 
 .home .container-foto .foto {
-    max-width: 450px;
+    max-width: 350px;
     border-radius: 50%;
 }
 
+.home .container-foto img {
+    width: 100%;
+    border-radius: 50%;
+}
+
+.home .foto.sombra-interna {
+    background: var(--cor-fundo-foto);
+    background-size: 180% 180%;
+    animation: gradient-animation 5s ease infinite;
+}
 .home .redes-sociais {
     display: flex;
     gap: 20px;
@@ -62,20 +72,4 @@
     color: var(--cor-destaque);
     border-color: var(--cor-destaque);
     transform: scale(1.1);
-}
-
-.home .container-foto .foto {
-    max-width: 450px;
-    border-radius: 50%;
-}
-
-.home .container-foto img {
-    width: 100%;
-    border-radius: 50%;
-}
-
-.home .foto.sombra-interna {
-    background: var(--cor-fundo-foto);
-    background-size: 180% 180%;
-    animation: gradient-animation 5s ease infinite;
 }

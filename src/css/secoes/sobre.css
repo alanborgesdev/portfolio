@@ -1,6 +1,11 @@
 .sobre {
-    text-align: center;
+    display: flex;
+    align-items: center;
+    gap: 60px;
+    padding: 40px 0;
 }
+
+
 
 .sobre .descricao {
     max-width: 700px;
@@ -9,9 +14,9 @@
 
 .sobre .descricao p {
     font-family: var(--fonte-secundaria);
-    font-size: 24px;
+    font-size: 18px;
     line-height: 1.6;
     margin-bottom: 20px;
-    text-align: left;
+    text-align: justify;
     color: var(--cor-texto-secundario);
 }

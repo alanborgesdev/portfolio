@@ -65,6 +65,18 @@
         align-items: center;
     }
 
+    .sobre {
+        display: block;
+        padding: 0 20px;
+        align-content: space-around;
+    }
+
+    .sobre .descricao p {
+        font-size: 17px;
+        text-align:justify;
+        line-height: 1.6;
+    }
+
     .projetos .container-projetos {
         padding: 0 30px;
     }
@@ -130,7 +142,7 @@
         font-size: 16px;
     }
 
-    .home .container-foto img {
+    .home .container-foto .foto {
         max-width: 320px;
     }
 
