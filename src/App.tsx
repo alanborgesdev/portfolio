@@ -1,8 +1,8 @@
 // 1. Importar todos os componentes de seção
 import Header from './components/Header';
 import Hero from './components/Hero';
-import ProjectsSection from './components/ProjectsSection';
 import AboutSection from './components/AboutSection';
+import ProjectsSection from './components/ProjectsSection';
 import ContactSection from './components/ContactSection';
 import Footer from './components/Footer';
 
@@ -13,8 +13,8 @@ function App() {
       <Header />
       <main className='overflow-x-hidden'>
         <Hero />
-        <ProjectsSection />
         <AboutSection />
+        <ProjectsSection />
         <ContactSection />
       </main>
       <Footer />

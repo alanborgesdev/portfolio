@@ -4,7 +4,7 @@ import ProjectCard from './ProjectCard';
 
 const ProjectsSection = () => {
   return (
-    <section id="projetos" className="bg-gray-900 py-20">
+    <section id="projetos" className="bg-gray-900 py-20" aria-label="Seção de Projetos">
       <div className="container mx-auto px-6">
         <motion.h2 
           className="text-3xl md:text-4xl font-bold text-center mb-12 text-white"
@@ -12,6 +12,7 @@ const ProjectsSection = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
+          aria-label="Título Meus Projetos"
         >
           Meus Projetos
         </motion.h2>
@@ -24,6 +25,7 @@ const ProjectsSection = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
+              aria-label={`Projeto: ${project.title}`}
             >
               <ProjectCard project={project} />
             </motion.div>

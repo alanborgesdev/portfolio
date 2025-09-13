@@ -1,9 +1,7 @@
 import { useState } from 'react';
 import { Link } from 'react-scroll';
 import { FiMenu, FiX } from 'react-icons/fi';
-
-// 1. Importe seu logo da pasta assets
-import logo from '../assets/logo.png'; // Verifique se o caminho e o nome estão corretos
+import logo from '../assets/logo.png'; // Verifique o caminho
 
 const Header = () => {
     const [isOpen, setIsOpen] = useState(false);
@@ -19,17 +17,11 @@ const Header = () => {
         <header className='bg-gray-900/80 backdrop-blur-sm fixed top-0 left-0 w-full z-50 shadow-md'>
             <nav className='container mx-auto px-6 py-4 flex justify-between items-center'>
                 {/* Logo */}
-                <Link
-                    to='home'
-                    smooth={true}
-                    duration={500}
-                    className='cursor-pointer'
-                >
-                    {/* 2. Substitua a div do logo anterior pela tag <img> */}
-                    <img 
-                        src={logo} 
-                        alt="Logotipo de Alan Borges" 
-                        className="h-12 w-12 hover:opacity-80 transition-opacity" // Ajuste o tamanho aqui (h-10, h-12, etc.)
+                <Link to='home' smooth={true} duration={500} className='cursor-pointer'>
+                    <img
+                        src={logo}
+                        alt='Logotipo de Alan Borges'
+                        className='h-12 w-12 hover:opacity-80 transition-opacity'
                     />
                 </Link>
 
@@ -51,7 +43,11 @@ const Header = () => {
 
                 {/* Botão do Menu Hambúrguer (Mobile) */}
                 <div className='md:hidden'>
-                    <button onClick={() => setIsOpen(!isOpen)} className='text-white text-2xl'>
+                    <button
+                        onClick={() => setIsOpen(!isOpen)}
+                        className='text-white text-2xl'
+                        tabIndex={0} // Acessibilidade
+                    >
                         {isOpen ? <FiX /> : <FiMenu />}
                     </button>
                 </div>

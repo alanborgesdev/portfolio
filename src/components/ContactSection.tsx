@@ -30,7 +30,7 @@ const ContactSection = () => {
         >
           Estou sempre aberto a novas oportunidades e colaborações. Sinta-se à vontade para entrar em contato!
         </motion.p>
-        
+
         <motion.div 
           className="flex justify-center gap-6"
           initial={{ opacity: 0, y: 20 }}
@@ -45,6 +45,7 @@ const ContactSection = () => {
               target="_blank"
               rel="noopener noreferrer"
               aria-label={link.label}
+              title={link.label} // Adicionado para acessibilidade
               className="text-gray-400 hover:text-blue-400 transition-colors duration-300 text-4xl"
             >
               {link.icon}

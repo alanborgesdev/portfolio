@@ -50,4 +50,15 @@ export const projectsData: Project[] = [
         repoLink: 'https://github.com/alanborgesdev/movieflix-api',
         tags: ['Node.js', 'TypeScript', 'React', 'PostgreSQL', 'Prisma'],
     },
+
+    {
+        id: 5,
+        title: 'BotFlix',
+        description:
+            'Seu assistente pessoal para encontrar o filme perfeito. Feito com HTML, CSS, JavaScript puro e n8n, consumindo a API do TMDB.',
+        image: '/botflix-preview.gif',
+        link: 'https://alanborgesdev.github.io/botflix-n8n/',
+        repoLink: 'https://github.com/alanborgesdev/botflix-n8n',
+        tags: ['HTML', 'CSS', 'JavaScript', 'TMDB API', 'n8n'],
+    },
 ];

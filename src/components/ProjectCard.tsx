@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import type { Project } from '../data/projects';
-import { FaGithub, FaExternalLinkAlt } from 'react-icons/fa'; // <-- 1. IMPORTAR ÍCONES
+import { FaGithub, FaExternalLinkAlt } from 'react-icons/fa';
 
 interface ProjectCardProps {
   project: Project;
@@ -27,23 +27,23 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
           ))}
         </div>
 
-        {/* 👇 2. ÁREA DOS LINKS ATUALIZADA 👇 */}
         <div className="mt-auto flex items-center gap-6 pt-2">
           <a
             href={project.link}
             target="_blank"
             rel="noopener noreferrer"
+            aria-label={`Ver projeto ${project.title}`}
             className="text-blue-400 hover:text-blue-300 font-semibold inline-flex items-center gap-2 transition-colors"
           >
             <FaExternalLinkAlt /> Ver Projeto
           </a>
 
-          {/* Renderização Condicional: só mostra se `repoLink` existir */}
           {project.repoLink && (
             <a
               href={project.repoLink}
               target="_blank"
               rel="noopener noreferrer"
+              aria-label={`Ver repositório de ${project.title}`}
               className="text-gray-400 hover:text-white font-semibold inline-flex items-center gap-2 transition-colors"
             >
               <FaGithub /> Repositório
