@@ -1,15 +1,27 @@
 import { motion } from 'framer-motion';
-import { Mail, Linkedin, Github, Send } from 'lucide-react';
+import { Mail, Linkedin, Github, Send, CheckCircle, XCircle } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
-import { useToast } from '@/hooks/use-toast';
 import { useState } from 'react';
 
 const Contact = () => {
-    const { toast } = useToast();
     const [formData, setFormData] = useState({ name: '', email: '', message: '' });
     const [isSubmitting, setIsSubmitting] = useState(false);
+    const [notification, setNotification] = useState<{
+        show: boolean;
+        type: 'success' | 'error';
+        title: string;
+        message: string;
+    }>({
+        show: false,
+        type: 'success',
+        title: '',
+        message: '',
+    });
+
+    // 🔐 Access Key do Web3Forms (Configurada)
+    const WEB3FORMS_ACCESS_KEY = 'bdfe870e-bb7a-4925-8984-ce9e6bb3cf27';
 
     const socialLinks = [
         {
@@ -32,44 +44,111 @@ const Contact = () => {
         },
     ];
 
+    const showNotification = (
+        type: 'success' | 'error',
+        title: string,
+        message: string
+    ) => {
+        setNotification({ show: true, type, title, message });
+        setTimeout(() => {
+            setNotification({ show: false, type: 'success', title: '', message: '' });
+        }, 5000);
+    };
+
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
 
+        // Validações
         if (!formData.name || !formData.email || !formData.message) {
-            toast({
-                title: 'Erro',
-                description: 'Por favor, preencha todos os campos.',
-                variant: 'destructive',
-            });
+            showNotification(
+                'error',
+                'Erro',
+                'Por favor, preencha todos os campos.'
+            );
             return;
         }
 
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         if (!emailRegex.test(formData.email)) {
-            toast({
-                title: 'Erro',
-                description: 'Por favor, insira um email válido.',
-                variant: 'destructive',
-            });
+            showNotification('error', 'Erro', 'Por favor, insira um email válido.');
             return;
         }
 
         setIsSubmitting(true);
 
-        // Simulate form submission
-        setTimeout(() => {
-            toast({
-                title: 'Mensagem enviada!',
-                description: 'Obrigado pelo contato. Responderei em breve!',
+        try {
+            const response = await fetch('https://api.web3forms.com/submit', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    access_key: WEB3FORMS_ACCESS_KEY,
+                    name: formData.name,
+                    email: formData.email,
+                    message: formData.message,
+                    subject: '📩 Nova mensagem do Portfólio - Alan Borges',
+                    from_name: 'Portfólio Alan Borges',
+                }),
             });
-            setFormData({ name: '', email: '', message: '' });
+
+            const result = await response.json();
+
+            if (result.success) {
+                showNotification(
+                    'success',
+                    '✅ Mensagem enviada!',
+                    'Obrigado pelo contato. Responderei em breve!'
+                );
+                setFormData({ name: '', email: '', message: '' });
+            } else {
+                throw new Error(result.message || 'Erro ao enviar');
+            }
+        } catch (error) {
+            console.error('Erro ao enviar:', error);
+            showNotification(
+                'error',
+                '❌ Erro ao enviar',
+                'Não foi possível enviar sua mensagem. Tente novamente ou entre em contato via email direto.'
+            );
+        } finally {
             setIsSubmitting(false);
-        }, 1000);
+        }
+    };
+
+    const handleChange = (
+        e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+    ) => {
+        setFormData({
+            ...formData,
+            [e.target.name]: e.target.value,
+        });
     };
 
     return (
         <section id='contact' className='py-12 sm:py-16 md:py-20 px-4 sm:px-6 bg-secondary/20'>
             <div className='container mx-auto max-w-4xl'>
+                {/* Custom Toast Notification */}
+                {notification.show && (
+                    <div
+                        className={`fixed top-4 right-4 z-50 p-4 rounded-lg shadow-lg flex items-start gap-3 max-w-md animate-slide-in ${
+                            notification.type === 'success'
+                                ? 'bg-green-500 text-white'
+                                : 'bg-red-500 text-white'
+                        }`}
+                    >
+                        {notification.type === 'success' ? (
+                            <CheckCircle size={24} className='flex-shrink-0 mt-0.5' />
+                        ) : (
+                            <XCircle size={24} className='flex-shrink-0 mt-0.5' />
+                        )}
+                        <div className='flex-1'>
+                            <h4 className='font-semibold mb-1'>{notification.title}</h4>
+                            <p className='text-sm opacity-90'>{notification.message}</p>
+                        </div>
+                    </div>
+                )}
+
                 <motion.div
                     initial={{ opacity: 0, y: 30 }}
                     whileInView={{ opacity: 1, y: 0 }}
@@ -130,13 +209,13 @@ const Contact = () => {
                                     </label>
                                     <Input
                                         id='name'
+                                        name='name'
                                         placeholder='Seu nome'
                                         value={formData.name}
-                                        onChange={(e) =>
-                                            setFormData({ ...formData, name: e.target.value })
-                                        }
+                                        onChange={handleChange}
                                         className='bg-background/50'
                                         required
+                                        disabled={isSubmitting}
                                     />
                                 </div>
                                 <div>
@@ -148,14 +227,14 @@ const Contact = () => {
                                     </label>
                                     <Input
                                         id='email'
+                                        name='email'
                                         type='email'
                                         placeholder='seu@email.com'
                                         value={formData.email}
-                                        onChange={(e) =>
-                                            setFormData({ ...formData, email: e.target.value })
-                                        }
+                                        onChange={handleChange}
                                         className='bg-background/50'
                                         required
+                                        disabled={isSubmitting}
                                     />
                                 </div>
                                 <div>
@@ -167,14 +246,14 @@ const Contact = () => {
                                     </label>
                                     <Textarea
                                         id='message'
+                                        name='message'
                                         placeholder='Sua mensagem...'
                                         rows={5}
                                         value={formData.message}
-                                        onChange={(e) =>
-                                            setFormData({ ...formData, message: e.target.value })
-                                        }
+                                        onChange={handleChange}
                                         className='bg-background/50 resize-none'
                                         required
+                                        disabled={isSubmitting}
                                     />
                                 </div>
                                 <Button
@@ -182,14 +261,39 @@ const Contact = () => {
                                     className='w-full gradient-primary hover:opacity-90 transition-opacity'
                                     disabled={isSubmitting}
                                 >
-                                    {isSubmitting ? 'Enviando...' : 'Enviar Mensagem'}
-                                    <Send size={16} className='ml-2' />
+                                    {isSubmitting ? (
+                                        <>
+                                            <span className='animate-pulse'>Enviando...</span>
+                                        </>
+                                    ) : (
+                                        <>
+                                            Enviar Mensagem
+                                            <Send size={16} className='ml-2' />
+                                        </>
+                                    )}
                                 </Button>
                             </div>
                         </motion.form>
                     </div>
                 </motion.div>
             </div>
+
+            {/* CSS para animação do toast */}
+            <style>{`
+                @keyframes slide-in {
+                    from {
+                        transform: translateX(100%);
+                        opacity: 0;
+                    }
+                    to {
+                        transform: translateX(0);
+                        opacity: 1;
+                    }
+                }
+                .animate-slide-in {
+                    animation: slide-in 0.3s ease-out;
+                }
+            `}</style>
         </section>
     );
 };
