@@ -1,9 +1,15 @@
+import { memo, useCallback } from 'react';
 import { motion } from 'framer-motion';
 import { Download, ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { OptimizedImage } from '@/components/ui/optimized-image';
 import profilePhoto from '@/assets/profile-photo.jpg';
 
-const Hero = () => {
+const Hero = memo(() => {
+    const scrollToProjects = useCallback(() => {
+        document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' });
+    }, []);
+
     return (
         <section
             id='home'
@@ -19,7 +25,7 @@ const Hero = () => {
                         className='text-center md:text-left'
                     >
                         <h1 className='text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 leading-tight'>
-                            Olá, eu sou <br/>
+                            Olá, eu sou <br />
                             Alan Borges 👋
                         </h1>
                         <p className='text-base sm:text-lg md:text-xl text-muted-foreground mb-6 md:mb-8 max-w-lg mx-auto md:mx-0'>
@@ -30,11 +36,7 @@ const Hero = () => {
                             <Button
                                 size='lg'
                                 className='gradient-primary hover:opacity-90 transition-opacity w-full sm:w-auto'
-                                onClick={() =>
-                                    document
-                                        .getElementById('projects')
-                                        ?.scrollIntoView({ behavior: 'smooth' })
-                                }
+                                onClick={scrollToProjects}
                             >
                                 Ver Projetos
                                 <ArrowRight className='ml-2' size={20} />
@@ -62,10 +64,11 @@ const Hero = () => {
                     >
                         <div className='relative'>
                             <div className='absolute inset-0 gradient-primary rounded-full blur-3xl opacity-20'></div>
-                            <img
+                            <OptimizedImage
                                 src={profilePhoto}
                                 alt='Alan Borges - Desenvolvedor Full Stack'
                                 className='relative rounded-full w-48 h-48 sm:w-64 sm:h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 object-cover border-4 border-primary/30 shadow-glow'
+                                priority
                             />
                         </div>
                     </motion.div>
@@ -73,6 +76,8 @@ const Hero = () => {
             </div>
         </section>
     );
-};
+});
+
+Hero.displayName = 'Hero';
 
 export default Hero;
