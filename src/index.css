@@ -101,6 +101,9 @@
   }
 
   .glass-card {
-    @apply bg-card/60 backdrop-blur-md border border-border/40;
+    background-color: hsl(var(--card) / 0.6);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid hsl(var(--border) / 0.4);
   }
 }
