@@ -53,6 +53,7 @@ export const OptimizedImage = ({
         alt={alt}
         loading={priority ? 'eager' : 'lazy'}
         decoding='async'
+        fetchpriority={priority ? 'high' : 'auto'}
         className={cn(
           'transition-opacity duration-500',
           isLoaded ? 'opacity-100' : 'opacity-0',

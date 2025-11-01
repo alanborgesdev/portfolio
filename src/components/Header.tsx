@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import ThemeToggle from './ThemeToggle';
+import { ThemeToggle } from './ThemeToggle';
 import { useScrollSpy } from '@/hooks/useScrollSpy';
 import type { NavLink } from '@/types';
 import logo from '@/assets/logo.png';
@@ -36,7 +36,7 @@ const Header = () => {
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? 'glass-card shadow-card' : 'bg-transparent'
+        isScrolled ? 'glass-card shadow-card' : 'bg-background'
       }`}
     >
       <nav className='container mx-auto px-4 py-4'>

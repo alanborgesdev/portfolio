@@ -33,7 +33,9 @@ export default defineConfig(({ mode }) => ({
       jpg: {
         quality: 70,
       },
-      gif: {},
+      gif: {
+        quality: 70,
+      },
     }),
   ],
   resolve: {
