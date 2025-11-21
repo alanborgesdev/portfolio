@@ -85,7 +85,8 @@ const Projects = () => {
                 </div>
 
                 <div className="p-5 sm:p-6 flex flex-col flex-grow">
-                  <h3 className="text-lg sm:text-xl font-semibold mb-2 sm:mb-3 group-hover:text-primary transition-colors font-mono">
+                  {/* CORRIGIDO: text-foreground garante contraste + hover muda para primary */}
+                  <h3 className="text-lg sm:text-xl font-semibold mb-2 sm:mb-3 text-foreground group-hover:text-primary transition-colors font-mono">
                     {project.title}
                   </h3>
                   <p className="text-sm sm:text-base text-muted-foreground mb-4 flex-grow">
@@ -104,12 +105,13 @@ const Projects = () => {
                     ))}
                   </div>
 
+                  {/* BOTÕES - Unificados para ambos os temas */}
                   <div className="flex flex-col sm:flex-row gap-2 sm:gap-3 pt-4 border-t border-border/50">
                     {project.demo !== 'none' && (
                       <Button
                         variant="outline"
                         size="sm"
-                        className="flex-1 border-primary/50 hover:bg-primary/10 hover:border-primary font-mono"
+                        className="flex-1 border-primary bg-primary/10 text-foreground hover:bg-primary hover:text-primary-foreground font-mono font-semibold transition-colors"
                         asChild
                       >
                         <a href={project.demo} target="_blank" rel="noopener noreferrer">
@@ -121,7 +123,7 @@ const Projects = () => {
                     <Button
                       variant="outline"
                       size="sm"
-                      className="flex-1 border-primary/50 hover:bg-primary/10 hover:border-primary font-mono"
+                      className="flex-1 border-primary bg-primary/10 text-foreground hover:bg-primary hover:text-primary-foreground font-mono font-semibold transition-colors"
                       asChild
                     >
                       <a href={project.repo} target="_blank" rel="noopener noreferrer">

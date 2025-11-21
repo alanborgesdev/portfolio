@@ -16,7 +16,7 @@ const Contact = () => {
       name: 'LinkedIn',
       icon: <Linkedin size={24} />,
       url: 'https://linkedin.com/in/alanborgesdev',
-      color: 'hover:text-[#0A66C2]',
+      color: 'hover:text-primary',
     },
     {
       name: 'GitHub',
@@ -28,7 +28,7 @@ const Contact = () => {
       name: 'Email',
       icon: <Mail size={24} />,
       url: 'mailto:alanborgesdev0@gmail.com',
-      color: 'hover:text-accent',
+      color: 'hover:text-primary',
     },
   ];
 
@@ -91,7 +91,7 @@ const Contact = () => {
                     href={link.url}
                     target='_blank'
                     rel='noopener noreferrer'
-                    className={`flex items-center gap-4 p-4 glass-card rounded-lg hover:shadow-card hover:border-primary/40 transition-all duration-300 border-primary/20 ${link.color}`}
+                    className={`flex items-center gap-4 p-4 glass-card rounded-lg hover:shadow-card hover:border-primary/40 transition-all duration-300 border-primary/20 text-foreground ${link.color}`}
                   >
                     {link.icon}
                     <span className='font-medium font-mono'>{link.name}</span>
@@ -111,7 +111,7 @@ const Contact = () => {
             >
               <div className='space-y-4'>
                 <div>
-                  <label htmlFor='name' className='block text-sm font-medium mb-2 font-mono'>
+                  <label htmlFor='name' className='block text-sm font-medium mb-2 font-mono text-foreground'>
                     Nome
                   </label>
                   <Input
@@ -133,7 +133,7 @@ const Contact = () => {
                 </div>
 
                 <div>
-                  <label htmlFor='email' className='block text-sm font-medium mb-2 font-mono'>
+                  <label htmlFor='email' className='block text-sm font-medium mb-2 font-mono text-foreground'>
                     Email
                   </label>
                   <Input
@@ -156,7 +156,7 @@ const Contact = () => {
                 </div>
 
                 <div>
-                  <label htmlFor='message' className='block text-sm font-medium mb-2 font-mono'>
+                  <label htmlFor='message' className='block text-sm font-medium mb-2 font-mono text-foreground'>
                     Mensagem
                   </label>
                   <Textarea

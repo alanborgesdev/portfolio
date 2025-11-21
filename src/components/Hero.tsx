@@ -57,7 +57,7 @@ const Hero = memo(() => {
             <div className='flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center md:justify-start'>
               <Button
                 size='lg'
-                className='gradient-primary hover:shadow-glow-strong transition-all duration-300 font-mono w-full sm:w-auto'
+                className='gradient-primary hover:shadow-glow-strong transition-all duration-300 font-mono w-full sm:w-auto text-primary-foreground'
                 onClick={scrollToProjects}
               >
                 Ver Projetos

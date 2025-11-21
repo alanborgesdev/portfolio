@@ -33,7 +33,7 @@ const About = () => {
             <span className="text-accent">{'>'}</span> Sobre Mim
           </h2>
 
-          <div className="glass-card shadow-card rounded-xl md:rounded-2xl p-6 sm:p-8 mb-6 md:mb-8 border-primary/20">
+          <div className="glass-card shadow-card rounded-xl md:rounded-2xl p-6 sm:p-8 mb-6 md:mb-8 border border-primary/20">
             <p className="text-base sm:text-lg text-muted-foreground leading-relaxed mb-4 md:mb-6">
               Sou um desenvolvedor full stack apaixonado por criar soluções tecnológicas que fazem a diferença.
               Minha jornada no desenvolvimento web começou com curiosidade e evoluiu para uma dedicação profunda
@@ -54,12 +54,15 @@ const About = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="glass-card shadow-card rounded-xl p-6 hover:shadow-glow hover:border-primary/40 transition-all duration-300 group border-primary/20"
+                className="glass-card shadow-card rounded-xl p-6 hover:shadow-glow hover:border-primary/40 transition-all duration-300 group border border-primary/20"
               >
-                <div className="w-12 h-12 rounded-lg gradient-primary flex items-center justify-center mb-4 group-hover:shadow-glow transition-all">
+                <div className="w-12 h-12 rounded-lg gradient-primary flex items-center justify-center mb-4 group-hover:shadow-glow transition-all text-primary-foreground">
                   {item.icon}
                 </div>
-                <h3 className="text-xl font-semibold mb-2 font-mono">{item.title}</h3>
+                {/* CORRIGIDO: Adicionado text-foreground para garantir contraste */}
+                <h3 className="text-xl font-semibold mb-2 font-mono text-foreground">
+                  {item.title}
+                </h3>
                 <p className="text-muted-foreground">{item.description}</p>
               </motion.div>
             ))}
