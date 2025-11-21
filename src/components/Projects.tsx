@@ -12,7 +12,7 @@ const Projects = () => {
   const projects = [
     {
       title: 'Pokédex',
-      description: 'Uma Pokédex interativa para consumir a PokeAPI, focada em gerenciamento de estado complexo e performance. Implementei cache de requisições para evitar chamadas duplicadas e troca de temas (light/dark), demonstrando manipulação de estado global na aplicação.',
+      description: 'Uma Pokédex interativa para consumir a PokeAPI, focada em gerenciamento de estado complexo e performance. Implementei cache de requisições para evitar chamadas duplicadas e troca de temas (light/dark).',
       tags: ['React', 'JavaScript', 'Styled-Components', 'API REST', 'Jest'],
       demo: 'https://pokedex-ecru-seven.vercel.app',
       repo: 'https://github.com/alanborgesdev/pokedex',
@@ -20,7 +20,7 @@ const Projects = () => {
     },
     {
       title: 'Formulário Newsletter',
-      description: 'Formulário de Newsletter com validação de campos em tempo real (client-side). O projeto demonstra o manuseio de estados de formulário, feedback de erro para o usuário e a lógica de submissão, prevenindo o envio de dados inválidos.',
+      description: 'Formulário de Newsletter com validação de campos em tempo real (client-side). Demonstra manuseio de estados de formulário, feedback de erro e lógica de submissão.',
       tags: ['React', 'TypeScript', 'Tailwind CSS', 'Vite', 'UX Design'],
       demo: 'https://formulario-newsletter-phi.vercel.app',
       repo: 'https://github.com/alanborgesdev/formulario-newsletter',
@@ -44,8 +44,8 @@ const Projects = () => {
     },
     {
       title: 'Pet Shop Dev | Landing Page',
-      description: 'Landing page moderna e responsiva para um Pet Shop, desenvolvida com Next.js e Tailwind CSS. O projeto demonstra o uso de componentes reutilizáveis, animações e carrosséis interativos para criar uma experiência de usuário envolvente.',
-      tags: ['Next.js', 'TypeScript', 'React', 'Tailwind CSS', 'Server-Side Rendering (SSR)'],
+      description: 'Landing page moderna e responsiva para um Pet Shop, desenvolvida com Next.js e Tailwind CSS. Demonstra uso de componentes reutilizáveis e animações.',
+      tags: ['Next.js', 'TypeScript', 'React', 'Tailwind CSS', 'SSR'],
       demo: 'https://petdev-landing-nextjs.vercel.app',
       repo: 'https://github.com/alanborgesdev/petdev-landing-nextjs',
       image: landingImg,
@@ -61,8 +61,8 @@ const Projects = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-8 md:mb-12 text-center">
-            Meus Projetos
+          <h2 className="font-mono text-2xl sm:text-3xl md:text-4xl font-bold mb-8 md:mb-12 text-center">
+            <span className="text-accent">{'>'}</span> Meus Projetos
           </h2>
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
@@ -73,28 +73,31 @@ const Projects = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="glass-card shadow-card rounded-xl overflow-hidden hover:shadow-glow transition-all duration-300 group flex flex-col"
+                className="glass-card shadow-card rounded-xl overflow-hidden hover:shadow-glow transition-all duration-300 group flex flex-col border-primary/20 hover:border-primary/40"
               >
                 <div className="relative aspect-video w-full overflow-hidden bg-muted">
                   <img
                     src={project.image}
                     alt={`Preview do projeto ${project.title}`}
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                    loading="lazy"
                   />
                 </div>
 
                 <div className="p-5 sm:p-6 flex flex-col flex-grow">
-                  <h3 className="text-lg sm:text-xl font-semibold mb-2 sm:mb-3 group-hover:text-primary transition-colors">
+                  <h3 className="text-lg sm:text-xl font-semibold mb-2 sm:mb-3 group-hover:text-primary transition-colors font-mono">
                     {project.title}
                   </h3>
-                  <p className="text-sm sm:text-base text-muted-foreground mb-4 flex-grow">{project.description}</p>
+                  <p className="text-sm sm:text-base text-muted-foreground mb-4 flex-grow">
+                    {project.description}
+                  </p>
 
                   <div className="flex flex-wrap gap-2 mb-4">
                     {project.tags.map((tag) => (
                       <Badge
                         key={tag}
                         variant="secondary"
-                        className="px-2 py-1 text-xs bg-primary/10 text-foreground border border-primary/20"
+                        className="px-2 py-1 text-xs bg-primary/10 text-foreground border border-primary/30 font-mono"
                       >
                         {tag}
                       </Badge>
@@ -106,7 +109,7 @@ const Projects = () => {
                       <Button
                         variant="outline"
                         size="sm"
-                        className="flex-1 border-primary/50 hover:bg-primary/10"
+                        className="flex-1 border-primary/50 hover:bg-primary/10 hover:border-primary font-mono"
                         asChild
                       >
                         <a href={project.demo} target="_blank" rel="noopener noreferrer">
@@ -118,7 +121,7 @@ const Projects = () => {
                     <Button
                       variant="outline"
                       size="sm"
-                      className="flex-1 border-primary/50 hover:bg-primary/10"
+                      className="flex-1 border-primary/50 hover:bg-primary/10 hover:border-primary font-mono"
                       asChild
                     >
                       <a href={project.repo} target="_blank" rel="noopener noreferrer">

@@ -1,34 +1,46 @@
-// components/theme-toggle.tsx
-"use client"; // Necessário para usar hooks do React
-
-import * as React from "react";
-import { Moon, Sun } from "lucide-react";
-import { useTheme } from "next-themes";
-
-import { Button } from "@/components/ui/button"; // Supondo que você use um componente de botão
+import { useEffect, useState } from 'react';
+import { Moon, Sun } from 'lucide-react';
+import { Button } from '@/components/ui/button';
 
 export function ThemeToggle() {
-  const { theme, setTheme } = useTheme();
-  const [mounted, setMounted] = React.useState(false);
+  const [theme, setTheme] = useState<'light' | 'dark'>(() => {
+    // Verifica localStorage ou preferência do sistema
+    const stored = localStorage.getItem('theme') as 'light' | 'dark' | null;
+    if (stored) return stored;
 
-  // Evita erro de hidratação garantindo que o componente só renderize no cliente
-  React.useEffect(() => {
-    setMounted(true);
-  }, []);
+    return window.matchMedia('(prefers-color-scheme: dark)').matches
+      ? 'dark'
+      : 'light';
+  });
 
-  if (!mounted) {
-    return null; // Ou um placeholder/spinner
-  }
+  useEffect(() => {
+    const root = document.documentElement;
+
+    // Remove ambas as classes primeiro
+    root.classList.remove('light', 'dark');
+
+    // Adiciona a classe do tema atual
+    root.classList.add(theme);
+
+    // Salva no localStorage
+    localStorage.setItem('theme', theme);
+  }, [theme]);
+
+  const toggleTheme = () => {
+    setTheme(prev => prev === 'dark' ? 'light' : 'dark');
+  };
 
   return (
     <Button
       variant="outline"
       size="icon"
-      onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+      onClick={toggleTheme}
+      className="border-primary/30 hover:bg-primary/10 hover:border-primary transition-colors"
+      aria-label={`Mudar para tema ${theme === 'dark' ? 'claro' : 'escuro'}`}
     >
-      <Sun className="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
-      <Moon className="absolute h-[1.2rem] w-[1.2rem] rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
-      <span className="sr-only">Toggle theme</span>
+      <Sun className="text-primary h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
+      <Moon className="text-primary absolute h-[1.2rem] w-[1.2rem] rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
+      <span className="sr-only">Alternar tema</span>
     </Button>
   );
 }

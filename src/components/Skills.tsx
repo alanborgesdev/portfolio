@@ -50,8 +50,8 @@ const Skills = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-8 md:mb-12 text-center">
-            Minhas Habilidades
+          <h2 className="font-mono text-2xl sm:text-3xl md:text-4xl font-bold mb-8 md:mb-12 text-center">
+            <span className="text-accent">{'>'}</span> Minhas Habilidades
           </h2>
 
           <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-4 md:gap-6 lg:gap-8">
@@ -62,9 +62,11 @@ const Skills = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: categoryIndex * 0.1 }}
-                className="glass-card shadow-card rounded-xl md:rounded-2xl p-5 sm:p-6"
+                className="glass-card shadow-card rounded-xl md:rounded-2xl p-5 sm:p-6 border-primary/20 hover:border-primary/40 transition-all"
               >
-                <h3 className="text-lg sm:text-xl font-semibold mb-4 md:mb-6 text-primary">{category.title}</h3>
+                <h3 className="text-lg sm:text-xl font-semibold mb-4 md:mb-6 text-primary font-mono">
+                  // {category.title}
+                </h3>
                 <div className="flex flex-wrap gap-2">
                   {category.skills.map((skill, skillIndex) => (
                     <motion.div
@@ -76,7 +78,7 @@ const Skills = () => {
                     >
                       <Badge
                         variant="secondary"
-                        className="px-3 py-1.5 text-sm bg-primary/10 hover:bg-primary/20 text-foreground border border-primary/20 transition-colors"
+                        className="px-3 py-1.5 text-sm bg-primary/10 hover:bg-primary/20 text-foreground border border-primary/30 hover:border-primary/50 transition-all font-mono cursor-default"
                       >
                         {skill}
                       </Badge>

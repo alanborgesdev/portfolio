@@ -22,7 +22,7 @@ const Contact = () => {
       name: 'GitHub',
       icon: <Github size={24} />,
       url: 'https://github.com/alanborgesdev',
-      color: 'hover:text-foreground',
+      color: 'hover:text-primary',
     },
     {
       name: 'Email',
@@ -40,13 +40,13 @@ const Contact = () => {
     if (result.success) {
       showNotification(
         'success',
-        '✅ Mensagem enviada!',
+        'Mensagem enviada!',
         'Obrigado pelo contato. Responderei em breve!'
       );
     } else {
       showNotification(
         'error',
-        '❌ Erro ao enviar',
+        'Erro ao enviar',
         result.error || 'Tente novamente ou entre em contato via email.'
       );
     }
@@ -63,9 +63,10 @@ const Contact = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className='text-2xl sm:text-3xl md:text-4xl font-bold mb-3 md:mb-4 text-center'>
-            Vamos Trabalhar Juntos?
+          <h2 className='font-mono text-2xl sm:text-3xl md:text-4xl font-bold mb-3 md:mb-4 text-center'>
+            <span className='text-accent'>{'>'}</span> Vamos Trabalhar Juntos?
           </h2>
+
           <p className='text-center text-muted-foreground mb-8 md:mb-12 text-base sm:text-lg'>
             Estou sempre aberto a discutir novos projetos e oportunidades.
           </p>
@@ -79,9 +80,10 @@ const Contact = () => {
               transition={{ duration: 0.6, delay: 0.2 }}
               className='space-y-4 md:space-y-6'
             >
-              <h3 className='text-lg sm:text-xl font-semibold mb-4 md:mb-6'>
-                Conecte-se comigo
+              <h3 className='text-lg sm:text-xl font-semibold mb-4 md:mb-6 font-mono'>
+                // Conecte-se comigo
               </h3>
+
               <div className='space-y-4'>
                 {socialLinks.map((link) => (
                   <a
@@ -89,10 +91,10 @@ const Contact = () => {
                     href={link.url}
                     target='_blank'
                     rel='noopener noreferrer'
-                    className={`flex items-center gap-4 p-4 glass-card rounded-lg hover:shadow-card transition-all duration-300 ${link.color}`}
+                    className={`flex items-center gap-4 p-4 glass-card rounded-lg hover:shadow-card hover:border-primary/40 transition-all duration-300 border-primary/20 ${link.color}`}
                   >
                     {link.icon}
-                    <span className='font-medium'>{link.name}</span>
+                    <span className='font-medium font-mono'>{link.name}</span>
                   </a>
                 ))}
               </div>
@@ -105,11 +107,11 @@ const Contact = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.2 }}
               onSubmit={handleSubmit}
-              className='glass-card shadow-card rounded-xl p-5 sm:p-6'
+              className='glass-card shadow-card rounded-xl p-5 sm:p-6 border-primary/20'
             >
               <div className='space-y-4'>
                 <div>
-                  <label htmlFor='name' className='block text-sm font-medium mb-2'>
+                  <label htmlFor='name' className='block text-sm font-medium mb-2 font-mono'>
                     Nome
                   </label>
                   <Input
@@ -118,7 +120,7 @@ const Contact = () => {
                     placeholder='Seu nome'
                     value={formData.name}
                     onChange={handleChange}
-                    className='bg-background/50'
+                    className='bg-background/50 border-primary/30 focus:border-primary'
                     disabled={isSubmitting}
                     aria-invalid={!!errors.name}
                     aria-describedby={errors.name ? 'name-error' : undefined}
@@ -131,7 +133,7 @@ const Contact = () => {
                 </div>
 
                 <div>
-                  <label htmlFor='email' className='block text-sm font-medium mb-2'>
+                  <label htmlFor='email' className='block text-sm font-medium mb-2 font-mono'>
                     Email
                   </label>
                   <Input
@@ -141,7 +143,7 @@ const Contact = () => {
                     placeholder='seu@email.com'
                     value={formData.email}
                     onChange={handleChange}
-                    className='bg-background/50'
+                    className='bg-background/50 border-primary/30 focus:border-primary'
                     disabled={isSubmitting}
                     aria-invalid={!!errors.email}
                     aria-describedby={errors.email ? 'email-error' : undefined}
@@ -154,7 +156,7 @@ const Contact = () => {
                 </div>
 
                 <div>
-                  <label htmlFor='message' className='block text-sm font-medium mb-2'>
+                  <label htmlFor='message' className='block text-sm font-medium mb-2 font-mono'>
                     Mensagem
                   </label>
                   <Textarea
@@ -164,7 +166,7 @@ const Contact = () => {
                     rows={5}
                     value={formData.message}
                     onChange={handleChange}
-                    className='bg-background/50 resize-none'
+                    className='bg-background/50 resize-none border-primary/30 focus:border-primary'
                     disabled={isSubmitting}
                     aria-invalid={!!errors.message}
                     aria-describedby={errors.message ? 'message-error' : undefined}
@@ -178,7 +180,7 @@ const Contact = () => {
 
                 <Button
                   type='submit'
-                  className='w-full gradient-primary hover:opacity-90 transition-opacity'
+                  className='w-full gradient-primary hover:shadow-glow transition-all font-mono'
                   disabled={isSubmitting}
                 >
                   {isSubmitting ? (
