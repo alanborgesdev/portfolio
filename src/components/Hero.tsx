@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import { Download, ArrowRight, Terminal } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { OptimizedImage } from '@/components/ui/optimized-image';
-import profilePhoto from '@/assets/profile-photo.jpg';
+import profilePhoto from '@/assets/profile-photo.webp';
 
 const Hero = memo(() => {
   const scrollToProjects = useCallback(() => {

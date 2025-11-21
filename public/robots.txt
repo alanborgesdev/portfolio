@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# Sitemap do site
+Sitemap: https://alanborgesdev.vercel.app/sitemap.xml
