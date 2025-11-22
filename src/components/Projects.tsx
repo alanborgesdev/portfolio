@@ -89,7 +89,7 @@ const Projects = () => {
                                         <video
                                             src={project.image}
                                             // 🚀 CORREÇÃO DE PERFORMANCE: IMPEDE O DOWNLOAD INICIAL
-                                            preload="none"
+                                            preload='none'
                                             // ❌ O 'poster' foi removido, a área do vídeo aparecerá preta.
                                             aria-label={`Preview do projeto ${project.title}`}
                                             className='w-full h-full object-cover group-hover:scale-105 transition-transform duration-300'
@@ -100,11 +100,13 @@ const Projects = () => {
                                         >
                                             {/* ♿ CORREÇÃO DE ACESSIBILIDADE: Adiciona a tag track para legendas */}
                                             <track
-                                              kind="captions"
-                                              // Cria o caminho para o arquivo .vtt (você precisa criar este arquivo)
-                                              src={`/assets/${project.title.toLowerCase().replace(/ /g, '-')}-captions.vtt`}
-                                              label="Português"
-                                              default
+                                                kind='captions'
+                                                // Cria o caminho para o arquivo .vtt (você precisa criar este arquivo)
+                                                src={`/assets/${project.title
+                                                    .toLowerCase()
+                                                    .replace(/ /g, '-')}-captions.vtt`}
+                                                label='Português'
+                                                default
                                             />
                                             Seu navegador não suporta a tag de vídeo.
                                         </video>

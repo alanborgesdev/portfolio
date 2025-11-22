@@ -10,32 +10,34 @@ const Skills = lazy(() => import('@/components/Skills'));
 const Projects = lazy(() => import('@/components/Projects'));
 const Contact = lazy(() => import('@/components/Contact'));
 
-const SectionSkeleton = () => <Skeleton className="h-[50vh] w-full mb-8" />;
+const SectionSkeleton = () => <Skeleton className='h-[50vh] w-full mb-8' />;
 
 const Index = () => {
-  return (
-    <div className="min-h-screen bg-gray-950 text-gray-50"> {/* Replaced BeamsBackground with a simple div for performance testing */}
-      <Header />
-      <main>
-        <Suspense fallback={<SectionSkeleton />}>
-          <Hero />
-        </Suspense>
-        <Suspense fallback={<SectionSkeleton />}>
-          <About />
-        </Suspense>
-        <Suspense fallback={<SectionSkeleton />}>
-          <Skills />
-        </Suspense>
-        <Suspense fallback={<SectionSkeleton />}>
-          <Projects />
-        </Suspense>
-        <Suspense fallback={<SectionSkeleton />}>
-          <Contact />
-        </Suspense>
-      </main>
-      <Footer />
-    </div>
-  );
+    return (
+        <div className='min-h-screen bg-gray-950 text-gray-50'>
+            {' '}
+            {/* Replaced BeamsBackground with a simple div for performance testing */}
+            <Header />
+            <main>
+                <Suspense fallback={<SectionSkeleton />}>
+                    <Hero />
+                </Suspense>
+                <Suspense fallback={<SectionSkeleton />}>
+                    <About />
+                </Suspense>
+                <Suspense fallback={<SectionSkeleton />}>
+                    <Skills />
+                </Suspense>
+                <Suspense fallback={<SectionSkeleton />}>
+                    <Projects />
+                </Suspense>
+                <Suspense fallback={<SectionSkeleton />}>
+                    <Contact />
+                </Suspense>
+            </main>
+            <Footer />
+        </div>
+    );
 };
 
 export default Index;
