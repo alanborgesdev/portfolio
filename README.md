@@ -1,6 +1,6 @@
 # Portfólio Alan Borges
 
-Portfólio pessoal desenvolvido com React, TypeScript e Tailwind CSS, apresentando meus projetos e habilidades como Desenvolvedor Full Stack.
+Portfólio pessoal desenvolvido com React, TypeScript e Tailwind CSS, apresentando meus projetos e habilidades como Desenvolvedor Front-end.
 
 ## 🚀 Tecnologias
 

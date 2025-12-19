@@ -103,7 +103,7 @@ const Hero = memo(() => {
 
                             <OptimizedImage
                                 src={profilePhoto}
-                                alt="Alan Borges - Desenvolvedor Full Stack especializado em Clean Code e TDD"
+                                alt="Alan Borges - Front-end Developer especializado em React, TypeScript e interfaces modernas."
                                 className="relative rounded-full w-48 h-48 sm:w-64 sm:h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 object-cover border-4 border-primary/40 shadow-glow"
                                 priority
                             />
